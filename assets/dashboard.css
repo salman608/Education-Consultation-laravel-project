@@ -1,0 +1,407 @@
+/**
+ * Name : Md. Mesbaul Islam;
+ * Url : http://tutorprovide.com/;
+ * Date : 2019-Aug-03;
+ * Designer Name : Md. Mesbaul Islam;
+ * Contact : 01738120411;
+ * E-mail : rony.max24@gmail.com;
+ * Author URI: ;
+ */
+body{
+	color: #333;
+	background-color: #fff;
+	font-size: 14px;
+}
+h1, h2, h3, h4, h5, h6{
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: 400;
+}
+a{
+	text-decoration: none;
+	transition: 0.3s;
+}
+a:hover,
+a:focus{
+	text-decoration: none;
+	transition: 0.3s;
+}
+ul{
+	margin: 0;
+	padding: 0;
+}
+p{
+	color: #333;
+	margin-bottom: 0;
+	font-weight: 300;
+}
+img{
+	max-width: 100%;
+	display: block;
+	vertical-align: middle;
+	transition: 0.3s;
+}
+.error.uk-text-danger{
+	font-size: 18px;
+	font-weight: 400;
+}
+.uk-text-primary{
+	color: #10a510 !important;
+}
+.uk-card-primary{
+	color: #fff;
+	background-color: #10a510;
+}
+.uk-button-primary{
+	color: #fff;
+	background-color: #10a510;
+}
+.uk-button-primary:focus, .uk-button-primary:hover{
+	color: #fff;
+	background-color: #255825;
+}
+
+nav{
+	width: 270px;
+	top: 0;
+	opacity: 1;
+	overflow: visible;
+	max-height: none;
+	position: fixed;
+	left: 0;
+	z-index: 1;
+	margin-top: 80px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+header{
+	position: fixed !important;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.cs-notifications-area li a{
+	position: relative;
+	padding: 0px 20px;
+}
+.cs-notifications-area li a span{
+	position: absolute;
+	left: 0px;
+	top: 15px;
+	z-index: 99;
+}
+section.uk-section{
+	padding-left: 270px;
+}
+.top_percentage{
+	box-sizing: border-box;
+	padding: 0 5px;
+	border-radius: 500px;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 14px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+.bootstrap-timepicker,
+.bootstrap-datepicker{
+	position: relative;
+}
+.bootstrap-timepicker-widget,
+.datepicker{
+	color: #333;
+	position: absolute;
+	z-index: 1000;
+	float: left;
+    min-width: 160px;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.uk-background-primary{
+	background-color: #10a510;
+}
+.uk-logo:focus, .uk-logo:hover,
+.uk-logo{
+	color: #fff;
+}
+.uk-navbar-nav>li:hover>a, .uk-navbar-nav>li>a.uk-open, .uk-navbar-nav>li>a:focus,
+.uk-navbar-nav>li>a{
+	color: #fff;
+}
+.uk-nav-default>li>a.uk-text-light,
+.uk-text-light{
+	color: #fff;
+}
+
+
+.sidebar-nav .uk-nav-default li a{
+	color: #fff !important;
+	padding: 12px 15px;
+}
+.sidebar-nav .uk-nav-default li a:hover,
+.sidebar-nav .uk-nav-default li a:focus{
+	color: #fff;
+}
+
+.sidebar-nav .uk-nav-default li.uk-active{
+    background-color: #444;
+}
+.sidebar-nav .uk-nav-default li.uk-active a{
+	color: #fff;
+}
+.sidebar-nav .uk-nav-default ul.uk-nav-sub {
+    padding: 5px 0 5px 0;
+}
+
+
+
+.uk-background-primary.uk-offcanvas{
+	background-color: transparent;
+}
+.uk-offcanvas-bar{
+	padding: 0;
+	background-color: #10a510;
+}
+
+.top_percentage.red{
+	background-color: #FF0000;
+}
+.top_percentage.yellow{
+	color: #333;
+	background-color: #FFFC00;
+}
+.top_percentage.blue{
+	background-color: #0000FF;
+}
+
+.edit_tutor_profile_tab li.uk-active a{
+	color: #fff;
+	background-color: #10a510;
+	border-color: #10a510;
+}
+.edit_tutor_profile_tab li.uk-active a:before{
+	position: absolute;
+	content: '';
+	width: 0;
+	height: 0;
+	border-left: 14px solid transparent;
+	border-right: 14px solid transparent;
+	border-top: 14px solid #10a510;
+	left: 45%;
+	bottom: -14px;
+}
+.edit_tutor_profile_tab.uk-tab::before{
+	border-color: #10a510;
+}
+.header_profile a{
+	top: 0;
+    right: 0;
+    height: 30px;
+    max-width: 30px;
+    background-color: #333 !important;
+    color: #fff !important;
+}
+
+*+.uk-margin {
+    margin-top: 35px!important;
+}
+#ProfileTab p{
+	font-size: 18px;
+}
+#ProfileTab .uk-text-meta{
+	color: #1e87f0;
+}
+
+.uk-form-label,
+.uk-form-label span{
+	font-size: 17px;
+	font-weight: 600;
+}
+
+
+.select2-container--default .select2-selection--multiple{
+	border-radius: 0;
+}
+
+.jobsearch .select2-container .select2-selection--multiple{
+	min-height: 40px;
+	background-color: rgba(255,255,255,.1);
+}
+.jobsearch .select2-container .select2-search--inline .select2-search__field{
+	font-size: 14px;
+    margin-top: 12px;
+    padding: 0 10px;
+}
+.jobsearch .select2-container .select2-search--inline .select2-search__field::placeholder{
+	color: #fff !important;
+}
+.jobsearch .select2-container--default .select2-selection--multiple .select2-selection__choice{
+	font-size: 16px;
+    margin-top: 6px;
+    background-color: transparent;
+    border: none;
+	color: #fff !important;
+}
+.select2-container--default .select2-selection--single .select2selection__placeholder {color: #fff;}
+
+
+.jobsearch .select2-container--default .select2-selection--multiple .select2-selection__choice__remove{
+	color: #fff !important;
+}
+
+.jobsearch .select2-container--default .select2-selection--multiple{
+	border-color: #fff;
+}
+
+.jobsearch .uk-select{
+	border-color: #fff !important;
+	color: #fff !important;
+}
+
+.tutor_profile_edit .select2-container .select2-selection--multiple{
+	min-height: 45px;
+}
+.tutor_profile_edit .select2-container .select2-search--inline .select2-search__field{
+	font-size: 18px;
+	margin-top: 12px;
+}
+.tutor_profile_edit .select2-container--default .select2-selection--multiple .select2-selection__choice{
+	font-size: 18px;
+	margin-top: 7px;
+}
+.tutor_profile_edit .select2-container--default .select2-selection--multiple{
+	border-color: #10a510;
+}
+
+
+#tuitionFindtionForm *+.uk-margin{
+	margin-top: 0 !important;
+}
+.uk-input, .uk-select, .uk-textarea{
+	border-color: #10a510;
+}
+
+.js-upload.uk-placeholder{
+	padding: 60px 30px;
+	border: 3px dashed #10a510;
+}
+.js-upload.uk-placeholder span{
+	font-size: 18px;
+}
+
+.toast.toast-success{
+	background-color: #1e87f0
+}
+@media only screen and (min-width: 959px){
+	header .uk-navbar-toggle{
+		display: none;
+	}
+	.uk-offcanvas{
+		display: block;
+	}
+	.uk-offcanvas-bar{
+		left: 0;
+		width: 270px;
+	}
+}
+@media only screen and (min-width: 959px){
+	section.uk-section {
+	    padding-top: 80px;
+	    padding-bottom: 20px;
+	}
+}
+@media only screen and (max-width: 959px) {
+	header .uk-navbar-toggle{
+		color: #fff !important;
+	}
+	section.uk-section{
+		padding-left: 0;
+	    padding-top: 80px;
+	    padding-bottom: 20px;
+	}
+	header .uk-logo{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	#ProfileTab p{
+		font-size: 16px;
+	}
+	.uk-form-label, .uk-form-label span{
+		font-size: 14px;
+	}
+	.header_profile{
+		display: block;
+	}
+	.header_profile img{
+		margin: 0 auto;
+	}
+	.uk-card-body{
+		padding: 10px;
+	}
+	.button-text-hide{
+		display: none;
+	}
+	.logout-form span{
+		display: none;
+	}
+	.logout-form .uk-button{
+		padding: 0 10px 0 15px;
+	}
+	.make_profile_strong .uk-card-header{
+		font-size: 1rem;
+	}
+	.uk-button{
+		font-size: .725rem;
+	}
+	.edit_tutor_profile_tab a{
+		font-size: 1rem;
+	}
+	.edit_tutor_profile_tab{
+		display: block;
+	}
+	.edit_tutor_profile_tab li.uk-active a:before{
+		display: none;
+	}
+	.header_profile h5,
+	.header_profile p{
+		text-align: center;
+	}
+	form[enctype="multipart/form-data"] button[type="submit"]{
+		margin-top: 15px;
+		display: block;
+		width: 100%;
+	}
+	.jobboard h3{
+		font-size: 18px;
+		line-height: 24px;
+    	margin-top: 10px;
+	}
+	.payment .uk-grid{
+		display: block;
+	}
+	.payment img{
+		margin: 0 auto;
+	}
+	.payment h3{
+		font-size: 1rem;
+		text-align: center;
+	}
+	.payment p{
+		font-size: 1.4rem;
+		text-align: center;
+	}
+	.uk-form-large:not(textarea):not([multiple]):not([size]){
+		height: 40px;
+	}
+}

@@ -1,0 +1,21 @@
+body {
+    font-family: sans-serif;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+thead {
+    vertical-align: top;
+    text-align: left;
+    font-weight: bold;
+}
+th {
+    text-align: left;
+    vertical-align: middle;
+}
+td {
+    padding: 0.08in;
+    text-align: left;
+    vertical-align: middle;
+}
