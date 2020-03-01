@@ -1,4 +1,39 @@
 @extends('layouts.frontend')
+
+@push('css')
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css"> -->
+<style>
+    .modall {
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        top: 0;
+        width: 500px;
+        height: 600px;
+        overflow: hidden;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+
+/*
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4); */
+    }
+    .modall-content {
+        background-color:transparent;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+    }
+    .close{
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+</style>
+@endpush
+
 @section('content')
 <div class="fetured-images owl-carousel owl-theme">
     <div class="item">
@@ -29,7 +64,7 @@
             <div class="row">
                 @foreach($premium_tutor as $tutor)
                 <div class="col-md-6">
-                    <a href="" class="media">
+                    <a href="{{route('tutoreprofile')}}" class="media"  id="wave-effect">
                         <img src="{{ (!empty($tutor->photo)) ? asset('storage/upload/'.$tutor->photo.'') : asset('storage/upload/default-profile.png') }}" class="mr-2 rounded-circle" alt="..." style="width: 70px;">
                         <div class="media-body">
                             <h5 class="mt-0">{{ $tutor->relUser->name }}</h5>
@@ -55,7 +90,7 @@
             <div class="row">
                 @foreach($hot_job as $job)
                 <div class="col-md-6">
-                    <div class="jobs" title="Tution ID - {{ (empty($job->job_id)) ? $job->id : $job->job_id }}">
+                    <div class="jobs " id="wave-effect" title="Tution ID - {{ (empty($job->job_id)) ? $job->id : $job->job_id }}">
                         <p>Tution ID - {{ (empty($job->job_id)) ? $job->id : $job->job_id }}</p>
                         <p><a href="">Need a tutor for {{ $job->relCourse->name }} student</a></p>
                         <p><small><em>Posted on {{ date('d M, Y', strtotime($job->created_at)) }}</em></small></p>
@@ -173,4 +208,31 @@ $(document).ready(function(){
         </div>
     </div>
 </div>
+ @foreach ($notice as $notice)
+<div id="myModal" class="modall animated bounceInDown ">
+
+    <div class="modall-content">
+        <span class="close">&times;</span>
+        <img src="{{URL::to('upload/notice/'.$notice->image)}}" alt="">
+    </div>
+
+</div>
+@endforeach
+
+@push('js')
+<script>
+var count = 0;
+    document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+            document.getElementById("myModal").style.display = "none"
+        },5000)
+    });
+
+    var span = document.getElementsByClassName("close")[0];
+
+    span.onclick = function() {
+        myModal.style.display = "none";
+    }
+</script>
+@endpush
 @endsection

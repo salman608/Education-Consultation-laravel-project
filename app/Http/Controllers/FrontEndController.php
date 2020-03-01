@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Jobboard;
 use App\TutorProfile;
+use App\Notice;
+
 
 class FrontEndController extends Controller
 {
@@ -15,6 +17,7 @@ class FrontEndController extends Controller
      */
     public function index()
     {
+        $notice=Notice::latest()->take(1)->get();
         $data['hot_jobs'] = [];
         $hot_jobs = Jobboard::latest()->where(['is_hot_job' => 1, 'is_published' => 'published'])->get();
         if (!empty($hot_jobs)) {
@@ -28,14 +31,18 @@ class FrontEndController extends Controller
         if (!empty($premium_tutors)) {
             $data['premium_tutors'] = $premium_tutors->chunk(10);
         }
-        return view('index', $data);
+        return view('index',compact('notice'), $data);
     }
 
 // tutor forofile view
 
     public function profile()
     {
-        return view('tutorprofile');
+
+      return view('tutorprofile');
+
+
+
     }
 
     /**

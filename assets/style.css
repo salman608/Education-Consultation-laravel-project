@@ -83,7 +83,7 @@ footer{
 	padding: 0 15px;
 }
 header.header{
-	padding-top: 5px;
+	padding-top: 12px;
 	padding-bottom: 5px;
 	background-color: #10a510;
 }
@@ -457,4 +457,9 @@ footer.footer .copyright{
 	section.section .login .register_tutor{
 		display: block;
 	}
+}
+
+
+.toplip a{
+	display: block;
 }

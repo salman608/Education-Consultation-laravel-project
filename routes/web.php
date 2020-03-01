@@ -151,3 +151,6 @@ Route::POST('/private_get_jobs', 'AxiosRequestController@private_get_jobs')->nam
 Route::GET('/jobs/apply/{id}', 'AxiosRequestController@apply_job')->name('job.apply');
 
 Route::GET('/soft_delete_users', 'SettingsController@soft_delete_users')->name('tutors.soft_delete_users');
+
+// Admin notice controller
+Route::resource('notice','admin\NoticeController');

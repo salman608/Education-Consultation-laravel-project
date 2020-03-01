@@ -9,62 +9,62 @@ class TutorProfile extends Model
     protected $fillable = [
         'user_id', 'phone', 'photo', 'father_mobile_no', 'mother_mobile_no', 'city_id', 'locations_id', 'facebook_link', 'is_premium'
     ];
-    
+
     public function relUser()
     {
         return $this->belongsTo('App\User', 'user_id', 'id');
     }
-    
+
     public function relCity()
     {
         return $this->belongsTo('App\City', 'city_id', 'id');
     }
-    
+
     public function relLocation()
     {
         return $this->belongsTo('App\Location', 'locations_id', 'id');
     }
-    
+
     public function relTpAvailability()
     {
         return $this->hasMany('App\TpAvailability', 'user_id', 'user_id');
     }
-    
+
     public function relTpCategories()
     {
         return $this->hasMany('App\TpCategory', 'user_id', 'user_id');
     }
-    
+
     public function relTpCourses()
     {
         return $this->hasMany('App\TpCourse', 'user_id', 'user_id');
     }
-    
+
     public function relTpEducational()
     {
         return $this->hasMany('App\TpEducational', 'user_id', 'user_id');
     }
-    
+
     public function relTpPreferredLocations()
     {
         return $this->hasMany('App\TpPreferredLocation', 'user_id', 'user_id');
     }
-    
+
     public function relTpProvideService()
     {
         return $this->hasMany('App\TpProvideService', 'user_id', 'user_id');
     }
-    
+
     public function relTpSubject()
     {
         return $this->hasMany('App\TpSubject', 'user_id', 'user_id');
     }
-    
+
     public function relTpTutoringStyle()
     {
         return $this->hasMany('App\TpTutoringStyle', 'user_id', 'user_id');
     }
-    
+
     public function relTpCredential()
     {
         return $this->hasMany('App\TpCredential', 'user_id', 'user_id');
@@ -86,27 +86,27 @@ class TutorProfile extends Model
 
         $percentage = 0;
         if (!empty($profile->relUser->name)) {
-            $percentage = ($percentage + 5);
+            $percentage = ($percentage + 6);
         }
         if (!empty($profile->relUser->email)) {
-            $percentage = ($percentage + 5);
+            $percentage = ($percentage + 10);
         }
         if (!empty($profile->phone)) {
-            $percentage = ($percentage + 5);
+            $percentage = ($percentage + 6);
         }
         if (!empty($profile->father_mobile_no) || !empty($profile->mother_mobile_no)) {
-            $percentage = ($percentage + 5);
+            $percentage = ($percentage + 6);
         }
         if (!empty($profile->relCity->name)) {
-            $percentage = ($percentage + 5);
+            $percentage = ($percentage + 6);
         }
         if (!empty($profile->relLocation->name)) {
-            $percentage = ($percentage + 5);
+            $percentage = ($percentage + 6);
         }
         if (count($profile->relTpEducational) == 1) {
             $percentage = ($percentage + 10);
         }
-        /* 40% */
+        /* 50% */
         if (!empty($profile->photo)) {
             $percentage = ($percentage + 10);
         }
@@ -124,19 +124,19 @@ class TutorProfile extends Model
 
 
         if (!empty($profile->gender)) {
-            $percentage = ($percentage + 2);
+            $percentage = ($percentage + 1);
         }
         if (!empty($profile->identity)) {
-            $percentage = ($percentage + 2);
+            $percentage = ($percentage + 1);
         }
         if (!empty($profile->father_name)) {
             $percentage = ($percentage + 1);
         }
         if (!empty($profile->mother_name)) {
-            $percentage = ($percentage + 2);
+            $percentage = ($percentage + 1);
         }
         if (!empty($profile->emergency_name)) {
-            $percentage = ($percentage + 1);
+            $percentage = ($percentage + 2);
         }
         if (!empty($profile->emergency_mobile_no)) {
             $percentage = ($percentage + 1);
@@ -144,12 +144,12 @@ class TutorProfile extends Model
         if (!empty($profile->emergency_relation)) {
             $percentage = ($percentage + 1);
         }
-        /* 10% */
+        /* 8% */
 
         if (count($profile->relTpEducational) > 1) {
-            $percentage = ($percentage + 25);
+            $percentage = ($percentage + 22);
         }
-        /* 20% */
+        /* 22% */
 
         if (count($profile->relTpCategories) > 0) {
             $percentage = ($percentage + 1);
@@ -196,6 +196,3 @@ class TutorProfile extends Model
         return $percentage;
     }
 }
-
-
-

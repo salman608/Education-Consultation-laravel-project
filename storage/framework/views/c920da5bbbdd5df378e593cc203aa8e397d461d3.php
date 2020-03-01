@@ -121,18 +121,34 @@
 	    </div>
 	    <div class="uk-card-body uk-margin uk-padding-remove-top uk-padding-remove-bottom">
 			<div class="uk-grid-small" uk-grid>
-			    <div class="uk-width-1-2@s">
+				<div class="">
+
+
+					<p style="color:black;font-weight: bold;"> <strong>Tutor's E-mail</strong> :  <?php echo e($applied_job->relTutorProfile->relUser->email); ?></p>
+					<p style="color:black;font-weight: bold;"> <strong>Tutor's Contact</strong>:   <?php echo e($applied_job->relTutorProfile->phone); ?></p>
+					<p style="color:black;font-weight: bold;"> <strong>Tutor's Institute</strong>:  App\TpEducational::relTpEducational<?php echo e($applied_job->relTutorProfile->phone); ?></p>
+
+
+				</div>
+			    <!-- <div class="uk-width-1-2@s">
 			    	<dl class="uk-description-list uk-description-list-divider">
 					    <dt>Tutor's E-mail</dt>
 					    <dd><?php echo e($applied_job->relTutorProfile->relUser->email); ?></dd>
 					</dl>
-			    </div>
-			    <div class="uk-width-1-2@s">
+			    </div> -->
+			    <!-- <div class="uk-width-1-2@s">
 			    	<dl class="uk-description-list uk-description-list-divider">
-					    <dt>Tutor's Contact Number</dt>
+					    <dt>Tutor's Contact</dt>
 					    <dd><?php echo e($applied_job->relTutorProfile->phone); ?></dd>
 					</dl>
-			    </div>
+			    </div> -->
+<!--
+					<div class="uk-width-1-2@s">
+			    	<dl class="uk-description-list uk-description-list-divider">
+					    <dt>University</dt>
+					    <dd></dd>
+					</dl>
+			    </div> -->
 			</div>
 	    </div>
 	    <div class="uk-card-footer">
@@ -154,7 +170,7 @@
         <?php if($job->is_published == 'published'): ?>
         <button type="submit" class="uk-button uk-button-primary"><strong class="uk-margin-small-right" uk-icon="icon: check"></strong> <span><?php echo e(__('Complete Tuition Job')); ?></span></button>
         <?php endif; ?>
-        
+
         <?php if($job->is_published == 'reviewing'): ?>
     	<a class="uk-button uk-button-secondary uk-float-right" href="<?php echo e(route('jobs.approve', $job->id)); ?>"><span uk-icon="check"></span> <strong class="button-text-hide"><?php echo e(__('Approve Tution Job')); ?></strong></a>
     	<?php endif; ?>
@@ -163,4 +179,5 @@
 
 </div>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.backend', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\xampp\htdocs\tutore\resources\views/jobboard/admin/show.blade.php ENDPATH**/ ?>

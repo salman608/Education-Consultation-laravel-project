@@ -20,6 +20,9 @@ Brief message-25000+ Expert male/female tutors from Bangla Medium, English Mediu
     <link rel="stylesheet" href="{{ asset('assets/croppie/css/croppie.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/dashboard.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+    <!-- toaster css link -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 
     <script type="text/javascript" src="{{ asset('assets/jquery/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset('assets/fontawesome/js/all.min.js') }}"></script>
@@ -99,6 +102,10 @@ Brief message-25000+ Expert male/female tutors from Bangla Medium, English Mediu
             <li class="{{ ($segment_one == 'locations') ? 'uk-active' : '' }}">
                 <a class="uk-text-bold" href="{{ route('locations.index') }}"><span class="uk-margin-small-right" uk-icon="icon: location"></span> Locations</a>
             </li>
+
+            <li class="{{ ($segment_one == 'notice') ? 'uk-active' : '' }}">
+                <a class="uk-text-bold" href="{{ route('notice.index') }}"><span class="uk-margin-small-right" uk-icon="icon: bell"></span>Notice</a>
+            </li>
             @endif
 
             @if(auth()->user()->role == 'admin')
@@ -118,6 +125,10 @@ Brief message-25000+ Expert male/female tutors from Bangla Medium, English Mediu
             </li>
             <li class="{{ ($segment_one == 'hot') ? 'uk-active' : '' }}">
                 <a class="uk-text-bold" href="{{ route('jobs.hot_jobs') }}"><span class="uk-margin-small-right" uk-icon="icon: heart"></span> Hot Jobs</a>
+            </li>
+
+            <li class="{{ ($segment_one == 'notice') ? 'uk-active' : '' }}">
+                <a class="uk-text-bold" href="{{ route('notice.index') }}"><span class="uk-margin-small-right" uk-icon="icon: bell"></span>Notice</a>
             </li>
             @endif
 
@@ -180,5 +191,25 @@ Brief message-25000+ Expert male/female tutors from Bangla Medium, English Mediu
         @endif
     @endcomponent
 @endif
+
+<!-- toaster js link -->
+<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+        {!! Toastr::message() !!}
+
+<script>
+  @if ($errors->any())
+  @foreach ($errors->all() as  $error)
+  toastr.error('{{ $error }}', 'Error',{
+    closeButton:true,
+    progressBar:true,
+  });
+
+  @endforeach
+  @else
+  @endif
+</script>
+
+  @stack('js')
 </body>
 </html>

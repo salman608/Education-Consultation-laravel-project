@@ -1,3 +1,37 @@
+<?php $__env->startPush('css'); ?>
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css"> -->
+<style>
+    .modall {
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        top: 0;
+        width: 500px;
+        height: 600px;
+        overflow: hidden;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+
+/*
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4); */
+    }
+    .modall-content {
+        background-color:transparent;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+    }
+    .close{
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+</style>
+<?php $__env->stopPush(); ?>
+
 <?php $__env->startSection('content'); ?>
 <div class="fetured-images owl-carousel owl-theme">
     <div class="item">
@@ -28,7 +62,7 @@
             <div class="row">
                 <?php $__currentLoopData = $premium_tutor; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tutor): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="col-md-6">
-                    <a href="" class="media">
+                    <a href="<?php echo e(route('tutoreprofile')); ?>" class="media"  id="wave-effect">
                         <img src="<?php echo e((!empty($tutor->photo)) ? asset('storage/upload/'.$tutor->photo.'') : asset('storage/upload/default-profile.png')); ?>" class="mr-2 rounded-circle" alt="..." style="width: 70px;">
                         <div class="media-body">
                             <h5 class="mt-0"><?php echo e($tutor->relUser->name); ?></h5>
@@ -54,7 +88,7 @@
             <div class="row">
                 <?php $__currentLoopData = $hot_job; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $job): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="col-md-6">
-                    <div class="jobs" title="Tution ID - <?php echo e((empty($job->job_id)) ? $job->id : $job->job_id); ?>">
+                    <div class="jobs " id="wave-effect" title="Tution ID - <?php echo e((empty($job->job_id)) ? $job->id : $job->job_id); ?>">
                         <p>Tution ID - <?php echo e((empty($job->job_id)) ? $job->id : $job->job_id); ?></p>
                         <p><a href="">Need a tutor for <?php echo e($job->relCourse->name); ?> student</a></p>
                         <p><small><em>Posted on <?php echo e(date('d M, Y', strtotime($job->created_at))); ?></em></small></p>
@@ -188,5 +222,33 @@ $(document).ready(function(){
         </div>
     </div>
 </div>
+ <?php $__currentLoopData = $notice; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notice): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+<div id="myModal" class="modall animated bounceInDown ">
+
+    <div class="modall-content">
+        <span class="close">&times;</span>
+        <img src="<?php echo e(URL::to('upload/notice/'.$notice->image)); ?>" alt="">
+    </div>
+
+</div>
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+<?php $__env->startPush('js'); ?>
+<script>
+var count = 0;
+    document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+            document.getElementById("myModal").style.display = "none"
+        },5000)
+    });
+
+    var span = document.getElementsByClassName("close")[0];
+
+    span.onclick = function() {
+        myModal.style.display = "none";
+    }
+</script>
+<?php $__env->stopPush(); ?>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.frontend', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\xampp\htdocs\tutore\resources\views/index.blade.php ENDPATH**/ ?>

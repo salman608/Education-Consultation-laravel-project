@@ -6,17 +6,23 @@
 
     <div class="row">
       <div class="col-4"></div>
-      <div class="col-4">
-         <!-- <button type="button" name="button" class="btn btn-primary" style="font-size:20px;">About Teacher</button> </div> -->
-         <h2 style="color:blue;">About Teacher</h2>
-         <hr style="width:90%;float: left;border-bottom:2px solid green;">
-      </div>
+      <div class="col-4 text-center" >
+         <button type="button" name="button" class="btn btn-primary" style="font-size:20px;margin: auto;">About Teacher</button> </div>
+         <!-- <h2 style="color:blue;">About Teacher</h2>
+         <hr style="width:90%;float: left;border-bottom:2px solid green;"> -->
+
 
       <div class="col-4">
         <img src="assets/images/logo2.jpg" alt="" style="width: 150px;height: 55px; float: right;">
       </div>
+     </div>
+     <div class="row">
+       <div class="col-4"></div>
+       <div class="col-4"></div>
+       <div class="col-4"> <p style="float:right;margin-right: 7px;font-weight:bold;"><i class="fas fa-phone-volume" style="color:green;font-size:18px;"></i> 01707116460</p></div>
 
-   </div>
+     </div>
+
 
 
      <div class="row">
@@ -67,20 +73,55 @@
 
 
      </div>
-  </div>
+
 
 
     <div class="card-body">
       <div class="col">
         <button type="button" name="button" class="btn btn-success" style="width: 100%">Educational Qualification</button>
-        <table class="table table-bordered mt-3"><thead class="thead-custom"><tr><th>Exam Name</th> <th>Year</th> <th>Institute</th> <th>Group/Subject</th> <th>Result</th></tr></thead> <tbody><tr><td>Ssc</td> <td>2012</td> <td>Bhola Govt High School</td> <td>Business Studies </td> <td>5.00</td></tr> <tr><td>Hsc</td> <td>2014</td> <td>Jessore Cantonment School &amp; College</td> <td>Business Studies </td> <td>5.00</td></tr> <tr><td>Honours</td> <td>2020</td> <td>IBA- Jahangirnagar University</td> <td>BBA Major jn Marketing </td> <td>3.49</td></tr></tbody></table></div>
+        <table class="table table-bordered mt-3">
+          <thead class="thead-custom">
+            <tr>
+              <th>Exam Name</th>
+              <th>Year</th>
+              <th>Institute</th>
+              <th>Group/Subject</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+           <tbody>
+             <tr>
+               <td>Ssc</td>
+               <td>2012</td>
+               <td>Bhola Govt High School</td>
+                <td>Business Studies </td>
+                 <td>5.00</td>
+               </tr>
+               <tr>
+                 <td>Hsc</td>
+                 <td>2014</td>
+                 <td>Jessore Cantonment School &amp; College</td>
+                 <td>Business Studies </td>
+                 <td>5.00</td>
+
+              </tr>
+              <tr>
+                <td>Honours</td>
+                <td>2020</td>
+                <td>IBA- Jahangirnagar University</td>
+                <td>BBA Major jn Marketing </td>
+                <td>3.49</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
 
 
 
       <div class="row mt-2">
         <div class="col">
-          <button type="button" name="button" class="btn btn-success" style="width: 100%">Tution More Information</button>
+          <button type="button" name="button" class="btn btn-success" style="width:100%; ">Tution More Information</button>
           <table class="table">
             <!-- <thead class="thead-custom">
                <tr>
@@ -136,6 +177,12 @@
         </div>
     </div>
     </div>
+      
+  </div>
+
+      </div>
+
+
 
 
 <?php $__env->stopSection(); ?>

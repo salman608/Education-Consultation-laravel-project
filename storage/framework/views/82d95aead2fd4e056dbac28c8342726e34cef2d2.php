@@ -20,6 +20,9 @@ Brief message-25000+ Expert male/female tutors from Bangla Medium, English Mediu
     <link rel="stylesheet" href="<?php echo e(asset('assets/croppie/css/croppie.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('assets/dashboard.css')); ?>" />
     <link rel="stylesheet" href="<?php echo e(asset('assets/bootstrap/css/bootstrap.min.css')); ?>" />
+    <link rel="stylesheet" href="<?php echo e(asset('assets/css/style.css')); ?>" />
+    <!-- toaster css link -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 
     <script type="text/javascript" src="<?php echo e(asset('assets/jquery/jquery-3.2.1.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/fontawesome/js/all.min.js')); ?>"></script>
@@ -99,6 +102,10 @@ Brief message-25000+ Expert male/female tutors from Bangla Medium, English Mediu
             <li class="<?php echo e(($segment_one == 'locations') ? 'uk-active' : ''); ?>">
                 <a class="uk-text-bold" href="<?php echo e(route('locations.index')); ?>"><span class="uk-margin-small-right" uk-icon="icon: location"></span> Locations</a>
             </li>
+
+            <li class="<?php echo e(($segment_one == 'notice') ? 'uk-active' : ''); ?>">
+                <a class="uk-text-bold" href="<?php echo e(route('notice.index')); ?>"><span class="uk-margin-small-right" uk-icon="icon: bell"></span>Notice</a>
+            </li>
             <?php endif; ?>
 
             <?php if(auth()->user()->role == 'admin'): ?>
@@ -118,6 +125,10 @@ Brief message-25000+ Expert male/female tutors from Bangla Medium, English Mediu
             </li>
             <li class="<?php echo e(($segment_one == 'hot') ? 'uk-active' : ''); ?>">
                 <a class="uk-text-bold" href="<?php echo e(route('jobs.hot_jobs')); ?>"><span class="uk-margin-small-right" uk-icon="icon: heart"></span> Hot Jobs</a>
+            </li>
+
+            <li class="<?php echo e(($segment_one == 'notice') ? 'uk-active' : ''); ?>">
+                <a class="uk-text-bold" href="<?php echo e(route('notice.index')); ?>"><span class="uk-margin-small-right" uk-icon="icon: bell"></span>Notice</a>
             </li>
             <?php endif; ?>
 
@@ -180,6 +191,27 @@ Brief message-25000+ Expert male/female tutors from Bangla Medium, English Mediu
         <?php endif; ?>
     <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
+
+<!-- toaster js link -->
+<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+        <?php echo Toastr::message(); ?>
+
+
+<script>
+  <?php if($errors->any()): ?>
+  <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+  toastr.error('<?php echo e($error); ?>', 'Error',{
+    closeButton:true,
+    progressBar:true,
+  });
+
+  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+  <?php else: ?>
+  <?php endif; ?>
+</script>
+
+  <?php echo $__env->yieldPushContent('js'); ?>
 </body>
 </html>
 <?php /**PATH D:\xampp\htdocs\tutore\resources\views/layouts/backend.blade.php ENDPATH**/ ?>

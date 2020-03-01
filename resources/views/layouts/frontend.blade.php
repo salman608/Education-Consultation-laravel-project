@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ config('app.name') }} | {{ config('app.slogan') }}</title>
     <meta property="og:title" content="{{ config('app.name') }} | {{ config('app.slogan') }}"/>
     <meta property="og:image" content="{{ asset('assets/images/logo.png') }}"/>
     <meta property="og:description" content="A platform to connect students/parents with their right tutor.
 Brief message-25000+ Expert male/female tutors from Bangla Medium, English Medium,IELTS, GMAT, SAT, Medical/University Admission test, Project/Assignment are available. Locate your Home tutor in districts of Bangladesh." />
-    <link rel="icon" href="{{ asset('assets/images/favicon16.png') }}"> 
+    <link rel="icon" href="{{ asset('assets/images/favicon16.png') }}">
     <meta name="google-site-verification" content="cqC7jASDD6ePj60BddTtffY2XB4wLCObIFKDCV8aEns">
 
     <link rel="stylesheet" href="{{ asset('assets/fontawesome/css/all.min.css') }}">
@@ -19,6 +19,10 @@ Brief message-25000+ Expert male/female tutors from Bangla Medium, English Mediu
     <link rel="stylesheet" href="{{ asset('assets/toastr/toastr.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/select2/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
     <script type="text/javascript" src="{{ asset('assets/jquery/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset('assets/fontawesome/js/all.min.js') }}"></script>
@@ -31,29 +35,67 @@ Brief message-25000+ Expert male/female tutors from Bangla Medium, English Mediu
     <script src="{{ asset('assets/select2/js/select2.min.js') }}"></script>
     <script src="{{ asset('assets/axios/axios.min.js') }}"></script>
     <script src="{{ asset('assets/scripts.js') }}"></script>
+
+ @stack('css')
+
+
 </head>
 <body>
+
 <header class="header">
+
+  <div class="amni" style="height: 60px;">
     <div class="row">
         <div class="col-lg-4">
             <a class="" href="{{ route('/') }}">
                 <img src="{{ asset('assets/images/tutor-provide.png') }}" width="200px" height="">
             </a>
         </div>
-        <div class="col-lg-4">
-            <p><strong>Contact No : 01744-271585</strong></p>
-            <p><strong>Email : info@tutorprovide.com</strong></p>
+        <div class="col-lg-4" id="email-menu">
+
+           <ul class="email-icons">
+              <p class="animation infinite shake">Email Us</p>
+             <li><a href="#"><i class="fas fa-envelope"></i></i></a>
+               <ul>
+                 <li><a href="#" ><span>tutorprovide@gmail.com</span> </a></li>
+               </ul>
+              </li>
+           </ul>
+
         </div>
-        <div class="col-lg-4">
-            <ul class="social-icons">
+        <div class="col-lg-4" id="socail-menu">
+            <ul class="social-icons ">
+
+
+
+                <li>
+                  <p class="shake-btn animation shake">Hot Line</p>
+                  <a href=""><i class="fas fa-phone-square"></i></a>
+                  <ul>
+                    <li><a href="#" > Contact Us  <br> <span> 01725496104</span> </a></li>
+                  </ul>
+
+                </li>
                 <li><a href="https://www.facebook.com/tutorprovide"><i class="fab fa-facebook-square"></i></a></li>
+
                 <li><a href="https://www.youtube.com/channel/UCOxKVjBONG8sdAk5EIQ2l1Q"><i class="fab fa-youtube"></i></a></li>
                 <li><a href="https://www.linkedin.com/groups/13758366/"><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="https://www.instagram.com/tutorprovideofficial/"><i class="fab fa-instagram"></i></a></li>
+                <li data-toggle="tooltip" data-placement="bottom"
+  title="Tooltip on bottom"><a  href="https://www.instagram.com/tutorprovideofficial/"><i class="fab fa-instagram"></i></a></li>
                 <li><a href="https://twitter.com/ProvideTutor"><i class="fab fa-twitter-square"></i></a></li>
+
+
+               <!-- <p class="animation infinite shake">Email Us</p>
+                 <li><a href="#"><i class="fas fa-envelope"></i></i></a>
+                 <ul>
+                   <li><a href="#" ><span>tutorprovide@gmail.com</span> </a></li>
+                 </ul>
+               </li> -->
             </ul>
         </div>
     </div>
+  </div>
+
 </header>
 <section class="section">
     <div class="row">
@@ -443,12 +485,16 @@ Brief message-25000+ Expert male/female tutors from Bangla Medium, English Mediu
         <div class="row">
             <div class="col-lg-3">&nbsp;</div>
             <div class="col-lg-6">
-                <p>Copyright @ 2019 {{ config('app.name') }}. All Rights Reserved.</p>
+                <p>Copyright @ 2020 {{ config('app.name') }}. All Rights Reserved.</p>
             </div>
             <div class="col-lg-3">&nbsp;</div>
         </div>
     </div>
 </footer>
+
+<!-- <div class="loader">
+    <img src="upload/loader/tutoreloader.gif" alt="Loading..." />
+</div> -->
 
 
 @if (session()->has('message'))
@@ -461,5 +507,14 @@ Brief message-25000+ Expert male/female tutors from Bangla Medium, English Mediu
         @endif
     @endcomponent
 @endif
+
+<script type="text/javascript">
+    window.addEventListener("load", function () {
+    const loader = document.querySelector(".loader");
+    loader.className += " hidden"; // class "loader hidden"
+    });
+</script>
+
+ @stack('js')
 </body>
 </html>

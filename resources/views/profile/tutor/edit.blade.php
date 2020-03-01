@@ -164,7 +164,7 @@
 					<p class="uk-text-primary uk-text-bold">Education Information</p>
 					<div class="uk-margin">
 						<label class="uk-form-label" for="level_of_education">Add Masters, Honors, HSC/A Level, SSC/O Level <span class="uk-text-danger">(Required)*</span></label>
-						{{ Form::select('level_of_education', ['Secondary' => 'Secondary', 'Higher Secondary' => 'Higher Secondary', 'Diploma' => 'Diploma', 'Bachelor/Honors' => 'Bachelor/Honors', 'Masters' => 'Masters', 'Doctoral' => 'Doctoral'], null, ['id' => 'level_of_education', 'class' => 'uk-select uk-form-large', 'placeholder' => 'Select education level']) }}
+						{{ Form::select('level_of_education', educationLevel(), null, ['id' => 'level_of_education', 'class' => 'uk-select uk-form-large', 'placeholder' => 'Select education level']) }}
 		                <p class="uk-margin-remove-top uk-text-danger error level_of_education">
 		                    @error('level_of_education') {{ $message }} @enderror
 		                </p>
@@ -225,7 +225,7 @@
 					    </div>
 					    <div class="uk-width-1-3@s">
 					    	<label class="uk-form-label" for="from_date">From<span class="uk-text-meta"></span></label>
-			            	{{ Form::text('from_date', null, ['id' => 'from_date', 'class' => 'uk-input uk-form-large datepick', 'placeholder' => 'From']) }}
+			            	{{ Form::text('from_date',$profile->from_date, ['id' => 'from_date', 'class' => 'uk-input uk-form-large datepick', 'placeholder' => 'From']) }}
 				            <p class="uk-margin-remove-top uk-text-danger error from_date">
 				                @error('from_date') {{ $message }} @enderror
 				            </p>
@@ -255,7 +255,7 @@
 		                    @error('gender') {{ $message }} @enderror
 		                </p>
 					</div>
-					
+
 			        <div class="uk-margin">
 			        	<label class="uk-form-label" for="identity"><span class="uk-text-meta">NID / Passport No / Birth Certificate No</span> <span class="uk-text-danger">(Requied *)</span></label>
 			        	{{ Form::text('identity', $profile->identity, ['id' => 'identity', 'class' => 'uk-input uk-form-large', 'placeholder' => 'NID / Passport No / Birth Certificate Noer']) }}
@@ -483,7 +483,7 @@ $(document).ready(function(){
         var city_id = $(this).val();
         var initsellocation = '<option selected="selected" value="">Select Location</option>';
         $("#locations_id").html(initsellocation);
-        
+
         if (city_id != "") {
             axios.get('{{ route("get_locations") }}/'+city_id)
             .then(function (response) {
@@ -528,7 +528,7 @@ $(document).ready(function(){
             console.log(response);
             $(".error.uk-text-danger").html("&nbsp;");
             toastr.success(response.data.success);
-            $('#educationInformationForm')[0].reset();
+            $('#educationInformationForm')[1].reset();
         })
         .catch(function (error) {
             console.log(error.response);

@@ -1,0 +1,216 @@
+#socail-menu ul li{
+  display: inline-block;
+}
+
+#socail-menu ul li ul li{
+  display: block;
+  background-color: red;
+  margin-left: 139px;
+  margin-bottom: 20px;
+  /* border-top: 2px solid red; */
+  border-radius: 5px;
+
+}
+
+#socail-menu ul li ul li a{
+  padding: 10px 20px;
+  display: block;
+  font-weight: bold;
+  margin-top: -35px;
+}
+
+#socail-menu ul li ul {
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  display: none;
+
+
+}
+
+  #socail-menu ul li:hover ul{
+    display: block;
+  }
+
+  #socail-menu ul li p{
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+  }
+
+  #socail-menu ul li .shake-btn{
+    position: absolute;
+    color: white;
+    margin-top: -21px;
+    padding: 0px 4px 1px;
+    margin-left: -48px;
+
+    animation-duration: 3s;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
+    transition-timing-function: linear;
+  }
+
+
+/* for email */
+
+
+header.header .email-icons li a{
+	color: #fff;
+	font-size: 20px;
+	line-height: 20px;
+}
+
+
+
+#email-menu ul li{
+  /* display: inline-block; */
+      margin-top: 11px;
+}
+
+#email-menu ul li ul li{
+  display: block;
+  background-color: red;
+  margin-left: 44px;
+  margin-bottom: 20px;
+  /* border-top: 2px solid red; */
+  border-radius: 5px;
+
+}
+
+#email-menu ul li ul li a{
+  padding: 10px 20px;
+  display: block;
+  font-weight: bold;
+  margin-top: -35px;
+}
+
+#email-menu ul li ul {
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  display: none;
+
+
+}
+
+  #email-menu ul li:hover ul{
+    display: block;
+  }
+
+  #email-menu ul li p{
+    background-color: red !important;
+    color: white;
+    border-radius: 5px;
+  }
+
+.shake{
+    background-color: red;
+    border-radius: 5px;
+    position: absolute;
+    color: white;
+    margin-top: -21px;
+    padding: 0px 4px 1px;
+    margin-left: -48px;
+    animation-duration: 3s;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
+    transition-timing-function: linear;
+  }
+
+
+  /* wavee effect start */
+
+  #wave-effect:hover{
+    box-shadow: 20px 40px 50px 20px rgba(0.2, 0, 0, 0.3);
+        /* box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.2); */
+        transition: box-shadow .7s;
+      }
+
+      #wave-effect{
+       transition: box-shadow 0.3s ease-in-out;
+      }
+
+
+/* purple button color */
+
+.btn-purple{
+  background-color: #af6fdc;
+  color: white;
+  font-weight: bold;
+}
+
+.block{
+  display: inline-block;
+}
+
+
+
+/* Available tutor csss here */
+
+.uk-text-bold{
+  font-weight: bold;
+}
+
+.uk-text-primary{
+  color:green;
+}
+
+.uk-label{
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+
+/* Page loader css here */
+
+.loader {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader > img {
+  width: 400px;
+  height: 250px;
+
+}
+
+.loader.hidden {
+  animation: fadeOut 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  100% {
+      opacity: 0;
+      visibility: hidden;
+  }
+}
+
+
+/* #wave-effect {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.6s;
+    transition-property: transform;
+}
+
+#wave-effect:hover,
+#wave-effect:focus,
+#wave-effect:active {
+    transform: scale(1.1, 1.1);
+    transition: box-shadow .3s;
+    transition-duration: 0.3s;
+} */
